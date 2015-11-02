@@ -1,0 +1,215 @@
+/* CSS declarations go here */
+
+input.checkbox-icon {
+  display: none;
+}
+ 
+input.checkbox-icon + label {
+  display:inline-block;
+  padding: 0 0 0 0px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+input.checkbox-icon:checked + label {
+  display:inline-block;
+  padding: 0 0 0 0px;
+  opacity: 1;
+}
+
+.checkbox-wrapper {
+  display: inline-block;
+}
+
+.tags-wrapper {
+  padding: 20px 0;
+}
+
+.button-right {
+  float: right;
+}
+
+.blue-icon {
+  color: #0052CC;
+}
+
+.yellow-icon {
+  color: #CCCC00;
+}
+
+.pink-icon {
+  color: #CC52A3;
+}
+
+.tasks-wrapper {
+  overflow: auto;
+}
+
+.ui-sortable-helper {
+  backgrund-color: grey;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #315481;
+  background-image: linear-gradient(to bottom, #315481, #918e82 100%);
+  background-attachment: fixed;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 0;
+  margin: 0;
+
+  font-size: 14px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 100%;
+  background: white;
+  overflow: hidden;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.task-info {
+  opacity: 0.5;
+}
+
+.button-icon {
+  cursor: pointer;
+  vertical-align: middle;
+  &:before {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  &.danger {
+    color: #E66565;
+  }
+}
+
+.button-icon.button-right + .button-icon {
+  margin-right: 10px;
+}
+
+.button-icon + .button-icon, .checkbox-wrapper + .checkbox-wrapper {
+  margin-left: 10px;
+}
+
+.task-title {
+
+  font-size: 24px;
+}
+
+.checked-task {
+  color: #398F39;
+}
+
+li.checked {
+  background-color: #FAFAFA;
+  .button-icon.tag, .toggle-important {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+
+header {
+  background: #d2edf4;
+  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+  padding: 20px 15px 15px 15px;
+  position: relative;
+}
+
+#login-buttons {
+  display: block;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin: 0;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin-right: 1em;
+}
+
+form {
+  margin-top: 10px;
+  margin-bottom: -10px;
+  position: relative;
+}
+
+.new-task input {
+  box-sizing: border-box;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  width: 100%;
+  padding-right: 80px;
+  font-size: 1em;
+}
+
+.new-task input:focus{
+  outline: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  background: white;
+}
+
+
+li {
+  position: relative;
+  list-style: none;
+  padding: 15px;
+  border-bottom: #eee solid 1px;
+}
+
+li .text {
+  margin-left: 10px;
+}
+
+li.checked .text {
+  text-decoration: line-through;
+}
+
+li.private {
+  background: #eee;
+  border-color: #ddd;
+}
+
+header .hide-completed {
+  float: right;
+}
+
+.toggle-private {
+  margin-left: 5px;
+}
+
+@media (max-width: 600px) {
+  li {
+    padding: 12px 15px;
+  }
+
+  .search {
+    width: 150px;
+    clear: both;
+  }
+
+  .new-task input {
+    padding-bottom: 5px;
+  }
+}/* CSS declarations go here */

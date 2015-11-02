@@ -1,0 +1,59 @@
+<head>
+  <title>Todo List</title>
+</head>
+
+
+<body>
+  <div class="container">
+	<header>
+		<h1>Todo List</h1>
+
+		<!-- add a form below the h1 -->
+		<form class="new-task" id="form1">
+		<input type="text" name="text" placeholder="Type to add new tasks" />
+    <div class="tags-wrapper">
+      <div class="checkbox-wrapper">
+        <input type="checkbox" name="blue_tag" id="blue-tag" class="toggle-blue checkbox-icon" /><label for="blue-tag" class="fa fa-circle button-icon fa-2x blue-icon" ></label>
+      </div>
+      <div class="checkbox-wrapper">
+        <input type="checkbox" name="yellow_tag" id="yellow-tag" class="toggle-yellow checkbox-icon" /><label for="yellow-tag" class="fa fa-circle button-icon fa-2x yellow-icon" ></label>
+      </div>
+      <div class="checkbox-wrapper">
+        <input type="checkbox" name="pink_tag" id="pink-tag" class="toggle-pink checkbox-icon" /><label for="pink-tag" class="fa fa-circle button-icon fa-2x pink-icon" ></label>
+      </div>
+      <div class="checkbox-wrapper button-right">
+        <input type="checkbox" name="important_task" id="important-task" class="toggle-important checkbox-icon" /><label for="important-task" class="fa fa-exclamation-triangle button-icon danger button-right fa-2x" ></label>
+      </div>
+    </div>
+
+		</form>
+    <button type="submit" form="form1" class="button" value="Submit">Submit</button>
+    
+  <span class="show-important button">Show Important</span>
+
+    <span class="sort-asc button">Sort Ascending</span>
+    <span class="sort-desc button">Sort Descending</span>
+	</header>
+    <ul id="sortable" class="tasks-wrapper ui-sortable">
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+
+    </ul>
+  </div>
+</body>
+
+ <template name="task">
+  <li class="{{#if checked}}checked{{/if}} {{#if important}}important-task{{/if}}">
+    <i class="delete fa fa-trash fa-2x button-icon button-right"></i>
+    {{#if important}}<i class="toggle-important fa fa-exclamation-triangle important-task-icon fa-2x button-icon button-right danger"></i>{{/if}}
+    <span class="date task-info">{{createdAt}}</span>
+    <br>
+    <i class="{{#if checked}}checked-task{{/if}} fa fa-check-square-o fa-2x toggle-checked button-icon"></i>
+    <span class="text task-title">{{text}}</span>
+    <br>
+    {{#if blue}}<i class="fa fa-circle button-icon fa-2x blue-icon tag"></i>{{/if}}
+    {{#if yellow}}<i class="fa fa-circle button-icon fa-2x yellow-icon tag"></i>{{/if}}
+    {{#if pink}}<i class="fa fa-circle button-icon fa-2x pink-icon tag"></i>{{/if}}
+  </li>
+</template>
